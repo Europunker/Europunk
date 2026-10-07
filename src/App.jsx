@@ -2,7 +2,7 @@ import React, { useState, useRef, useMemo, useCallback, useEffect } from "react"
 
 // ---------- Data ----------
 const NODES = {
-  Europunk: { label: "Europunk", color: "#f50be2ff", info: "Europunk <noun> Denotes an aesthetically-oriented genre of speculative fiction based on the noun to which it is suffixed, in this case based on the successful realisation of the European Ideal and fulfillment of the European Project. But how does one become a true Europunk? ." },
+  Europunk: { label: "Europunk", color: "#f50be2ff", info: "Europunk <noun> Denotes an aesthetically-oriented genre of speculative fiction based on the noun to which it is suffixed, in this case based on the successful realisation of the European Ideal and fulfillment of the European Project. But how does one become a true Europunk? Truth is, there are many ways..." },
   sun: { label: "The Sun", color: "#ef4444", info: "A G-type main-sequence star holding 99.86% of the system's mass. Fuses ~600 million tonnes of hydrogen per second." },
   planets: { label: "Planets", color: "#3b82f6", info: "Eight planets divided into rocky inner worlds and gas/ice giants. All orbit the Sun in roughly the same plane." },
   mercury: { label: "Mercury", color: "#a7837f", info: "Smallest planet, closest to the Sun. A year lasts 88 Earth days; surface temperatures swing from -180°C to 430°C." },
@@ -168,7 +168,7 @@ export default function App() {
     <div className="w-full h-full flex flex-col bg-slate-950 text-slate-100" style={{ minHeight: 600 }}>
       <div className="px-5 py-3 border-b border-slate-800 flex items-center gap-3">
         <div>
-          <h1 className="text-base font-semibold tracking-wide">🕸️ Spider Diagram Explorer</h1>
+          <h1 className="text-base font-semibold tracking-wide">◌ Spider Diagram Explorer</h1>
           <p className="text-xs text-slate-400">
             Click = info · Double-click = zoom into connections · Click a faded node = go back up
           </p>
