@@ -29,7 +29,7 @@ const NODES = {
   Abundance-Liberalism: { label: "Abundance Liberalism", color: "#aaaaad", info: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"},
   AL-Books: { label: "Library", color: "#aaaabf", info: "Want to learn more about Euroliberalism, or just want to maximise the accuracy of your LARPs? Get started here."},
   AL-Peeps: { label: "Notable Figures", color: "#aaaab1", info: "Want to know more about the influential figures associated with Euroliberalism and who shaped its history? Or maybe you just want to know who to LARP as in your discord PFP...?"},
-  Techno-Optimism: ( label: "Techno-Optimism", color: "#aaaaae", info: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"},
+  Techno-Optimism: { label: "Techno-Optimism", color: "#aaaaae", info: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"},
   TO-Books: { label: "Library", color: "#aaaab2", info: "Want to learn more about Techno-Optimism, or just want to maximise the accuracy of your LARPs? Get started here."},
   TO-Peeps: { label: "Notable Figures", color: "#aaaab3", info: "Want to know more about the influential figures associated with Techno-Optimism and who shaped its history? Or maybe you just want to know who to LARP as in your discord PFP...?"},
   Pan-European-Konservatismus: { label: "Pan-European Konservatismus", color: "#aaaaaf", info: "xxxxxxxxxxxxxxxxxxxxxxxxxx"},
