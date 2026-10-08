@@ -11,7 +11,7 @@ const NODES = {
   EPP: { label: "EPP", color: "#eab308", info: "The largest planet — more than twice as massive as all others combined. Its Great Red Spot is a storm wider than Earth." },
   ECR: { label: "ECR", color: "#facc15", info: "Famous for its spectacular ring system of ice and rock. It's less dense than water — it would float in a big enough bathtub." },
   PfE: { label: "PfE/ESN", color: "#8b5cf6", info: "Natural satellites. Earth has 1, Mars 2, Jupiter has 95+ confirmed, and Saturn leads with 140+." },
-  Pan_European_Solidarity: { label: "Pan-European Solidarity", color: "#94a3b8", info: "Earth's only natural satellite, likely formed when a Mars-sized body struck the young Earth. It drifts 3.8 cm farther away each year." },
+  Pan_European_Solidarity: { label: "Pan-European Solidarity", color: "#94a3b8", info: "Earth's only natural satellite, likely formed when a Mars-sized body struck the young Earth. It drifts 3.8 cm farther away each year."},
   PES_Books: { label: "Library", color: "#aaaaa5", info: "Want to learn more about Pan-European Solidarity, or just want to maximise the accuracy of your LARPs? Get started here."},
   PES_Peeps: { label: "Notable Figures", color: "#aaaaa6", info: "Want to know more about the influential figures associated with Pan-European Solidarity and who shaped its history? Or maybe you just want to know who to LARP as in your discord PFP...?"},
   Degrowth_Socialism: { label: "Degrowth Socialism", color: "#64748b", info: "A ring of rocky debris between Mars and Jupiter — leftovers from the system's formation that Jupiter's gravity never let clump into a planet." },
@@ -70,7 +70,8 @@ const LINKS = {
   Pan_European_Konservatismus: ["PEK_Books", "PEK_Peeps"],
   Soft_Euroscepticism: ["SE_Books", "SE_Peeps"],
   Hard_Euroscepticism: ["HE_Books", "HE_Peeps"],
-  Pan_European_Nationalism: ["PEN_Books", "PEN_Peeps"]
+  Pan_European_Nationalism: ["PEN_Books", "PEN_Peeps"],
+  PES_Books: [], PES_Peeps: [], DS_Books: [], DS_Peeps: [], SD_Books: [], SD_Peeps: [], WE_Books: [], WE_Peeps: [], EL_Books: [], EL_Peeps: [], AL_Books: [], AL_Peeps: [], TO_Books: [], TO_Peeps: [], EE_Books: [], EE_Peeps: [], PEK_Books: [], PEK_Peeps: [], SE_Books: [], SE_Peeps: [], HE_Books: [], HE_Peeps: [], PEN_Books: [], PEN_Peeps: [],
 };
 
 const ROOT = "Europunk";
@@ -81,7 +82,7 @@ function layout() {
   function place(nodeId, depth, angleCenter, angleSpan) {
     const children = LINKS[nodeId] || [];
     if (!children.length) return;
-    const r = 150 + depth * 110;
+    const r = 82 + depth * 16;
     children.forEach((childId, i) => {
       const a = angleCenter - angleSpan / 2 + (angleSpan / (children.length + 1)) * (i + 1);
       pos[childId] = { x: pos[nodeId].x + r * Math.cos(a), y: pos[nodeId].y + r * Math.sin(a) };
@@ -132,8 +133,8 @@ export default function App() {
   const visible = useMemo(() => {
     if (!focusId) return new Set([ROOT, ...(LINKS[ROOT] || [])]);
     const set = new Set(path);
-    // descendants of the focus node
-    const add = (id) => (LINKS[id] || []).forEach((c) => { set.add(c); add(c); });
+    // children of the focus node
+    (LINKS[focusId] || []).forEach((c) => set.add(c));
     add(focusId);
     return set;
   }, [path, focusId]);
