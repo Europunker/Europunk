@@ -135,7 +135,6 @@ export default function App() {
     const set = new Set(path);
     // children of the focus node
     (LINKS[focusId] || []).forEach((c) => set.add(c));
-    add(focusId);
     return set;
   }, [path, focusId]);
 
@@ -225,7 +224,7 @@ export default function App() {
         </div>
         {focusId && (
           <button
-            className="ml-auto text-xs bg-slate-800 hover\:bg-slate-700 rounded-md px-3 py-1.5 transition-colors"
+            className="ml-auto text-xs bg-slate-800 hover:bg-slate-700 rounded-md px-3 py-1.5 transition-colors"
             onClick={() => handleAncestorClick(ROOT)}
           >
             ↩ Overview
