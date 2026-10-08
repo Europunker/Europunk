@@ -2,8 +2,7 @@ import React, { useState, useRef, useMemo, useCallback, useEffect } from "react"
 
 // ---------- Data ----------
 const NODES = {
-  Europunk: { label: "Europunk", color: "#f50be2ff", info: "Europunk <noun> Denotes an aesthetically-oriented genre of speculative fiction based on the noun to which it is suffixed, in this case based on the successful realisation of the European Ideal and fulfillment of the European Project. But how does one become a true Europunk? Truth is, there are many ways..." },
-  Europarliament: { label: "European Parliament, Brussels", color: "#ef4444", info: "In Varietate Concordia. The goal of uniting Europe isn't owned by any single ideology; it takes all kinds to build a United Europe." },
+  Europunk: { label: "In Varietate Concordia", color: "#f50be2ff", info: "Europunk <noun> Denotes an aesthetically-oriented genre of speculative fiction based on the noun to which it is suffixed, in this case based on the successful realisation of the European Ideal and fulfillment of the European Project. But how does one become a true Europunk? Truth is, there are many ways..." },
   Left: { label: "GUE/NGL", color: "#3b82f6", info: "Eight planets divided into rocky inner worlds and gas/ice giants. All orbit the Sun in roughly the same plane." },
   Green: { label: "Greens/EFA", color: "#a7837f", info: "Smallest planet, closest to the Sun. A year lasts 88 Earth days; surface temperatures swing from -180°C to 430°C." },
   SnD: { label: "S&D", color: "#22c55e", info: "The only known world with life. 71% of its surface is ocean, and it has a single large moon that stabilises its axial tilt." },
@@ -50,8 +49,7 @@ const NODES = {
 };
 
 const LINKS = {
-  Europunk: ["Europarliament"],
-  Europarliament: ["Left", "Green", "SnD", "Renew", "EPP", "ECR", "PfE"],
+  Europunk: ["Left", "Green", "SnD", "Renew", "EPP", "ECR", "PfE"],
   Left: ["Pan_European_Solidarity", "Degrowth_Socialism"],
   Green: ["Degrowth_Socialism", "Sustainable_Democracy"],
   SnD: ["Welfare_Europeanism", "Sustainable_Democracy"],
@@ -82,7 +80,7 @@ function layout() {
   function place(nodeId, depth, angleCenter, angleSpan) {
     const children = LINKS[nodeId] || [];
     if (!children.length) return;
-    const r = 82 + depth * 16;
+    const r = 120 + depth * 16;
     children.forEach((childId, i) => {
       const a = angleCenter - angleSpan / 2 + (angleSpan / (children.length + 1)) * (i + 1);
       pos[childId] = { x: pos[nodeId].x + r * Math.cos(a), y: pos[nodeId].y + r * Math.sin(a) };
